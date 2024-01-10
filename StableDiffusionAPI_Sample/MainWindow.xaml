@@ -5,8 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StableDiffusionAPI_Sample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="StableDiffusion WEB UI API Sample" Height="720" Width="1280"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Margin="10,10,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Label Content="Stable Diffusion WEB UI - API Sample" FontSize="24" FontFamily="Hiragino Kaku Gothic ProN W6"/>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="{Binding Version}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16"/>
+            <TextBlock Text="{Binding Time}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16"/>
+        </StackPanel>
+        <Label Content="Logs" Grid.Row="2" FontFamily="Hiragino Kaku Gothic ProN W6" FontSize="20" VerticalAlignment="Bottom"/>
+        <ScrollViewer Grid.Row="3" Grid.RowSpan="9" VerticalScrollBarVisibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="{Binding Logs}" FontFamily="Hiragino Kaku Gothic ProN W3"/>
+        </ScrollViewer>
+
+        <Label Content="Prompt" FontSize="20" FontFamily="Hiragino Kaku Gothic ProN W6" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="10,10,10,10" Text="{Binding Prompt}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16" VerticalContentAlignment="Bottom"/>
+        <Label Content="Negative Prompt" FontSize="20" FontFamily="Hiragino Kaku Gothic ProN W6" Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom" Margin="10,0,0,0"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Margin="10,10,10,10" Text="{Binding NegativePrompt}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16" VerticalContentAlignment="Bottom"/>
+
+        <Grid Grid.Column="1" Grid.Row="5" Margin="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Size [px]" FontSize="20" FontFamily="Hiragino Kaku Gothic ProN W6" VerticalContentAlignment="Center"/>
+            <Label Content="Width" FontSize="18" FontFamily="Hiragino Kaku Gothic ProN W3" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Column="1"/>
+            <TextBox Grid.Column="2" Margin="10" Text="{Binding Width}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16" VerticalContentAlignment="Bottom"/>
+            <Label Content="Height" FontSize="18" FontFamily="Hiragino Kaku Gothic ProN W3" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Grid.Column="3"/>
+            <TextBox Grid.Column="4" Margin="10,10,10,10" Text="{Binding Height}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16" VerticalContentAlignment="Bottom"/>
+        </Grid>
+
+        <Button Content="Generate" Grid.Column="1" Grid.Row="6" Margin="50,0,50,0" Command="{Binding GenerateCommand}"/>
+
+        <Grid Grid.Column="1" Grid.Row="8" Margin="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="IP Address" Grid.Column="0" FontSize="18" FontFamily="Hiragino Kaku Gothic ProN W6" VerticalContentAlignment="Center" Margin="0,0,10,0" HorizontalContentAlignment="Right"/>
+            <TextBox Grid.Column="1" Margin="10" Text="{Binding Ip}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16" VerticalContentAlignment="Bottom"/>
+            <Label Content="Port" Grid.Column="2" FontSize="18" FontFamily="Hiragino Kaku Gothic ProN W6" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Margin="0,0,10,0"/>
+            <TextBox Grid.Column="3" Margin="10" Text="{Binding Port}" FontFamily="Hiragino Kaku Gothic ProN W3" FontSize="16" VerticalContentAlignment="Bottom"/>
+        </Grid>
     </Grid>
 </Window>

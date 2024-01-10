@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StableDiffusionAPI_Sample", "StableDiffusionAPI_Sample\StableDiffusionAPI_Sample.csproj", "{4FF79324-2129-4D5A-BA08-24C30F6C6AEE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogWriter", "..\..\99_MyLibrary\dotnetLibrary\LogWriter\LogWriter.csproj", "{6D1047CF-1A4D-41A6-9D3F-E28BF17B867E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTTP_Communications", "..\..\99_MyLibrary\dotnetLibrary\HTTP_Communications\HTTP_Communications.csproj", "{361419A9-FB5F-496F-A14B-2BD9E840F8E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4FF79324-2129-4D5A-BA08-24C30F6C6AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FF79324-2129-4D5A-BA08-24C30F6C6AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FF79324-2129-4D5A-BA08-24C30F6C6AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1047CF-1A4D-41A6-9D3F-E28BF17B867E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1047CF-1A4D-41A6-9D3F-E28BF17B867E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1047CF-1A4D-41A6-9D3F-E28BF17B867E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1047CF-1A4D-41A6-9D3F-E28BF17B867E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361419A9-FB5F-496F-A14B-2BD9E840F8E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361419A9-FB5F-496F-A14B-2BD9E840F8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361419A9-FB5F-496F-A14B-2BD9E840F8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361419A9-FB5F-496F-A14B-2BD9E840F8E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

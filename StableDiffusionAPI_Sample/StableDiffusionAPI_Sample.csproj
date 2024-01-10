@@ -1,11 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<AnalysisLevel>latest-Recommended</AnalysisLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
+	  <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\99_MyLibrary\dotnetLibrary\HTTP_Communications\HTTP_Communications.csproj" />
+	  <ProjectReference Include="..\..\..\99_MyLibrary\dotnetLibrary\LogWriter\LogWriter.csproj" />
+	</ItemGroup>
 
 </Project>
