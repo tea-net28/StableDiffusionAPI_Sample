@@ -20,7 +20,7 @@ namespace StableDiffusionAPI_Sample
                 this.prompt = prompt;
                 negative_prompt = negativePrompt;
                 this.width = width;
-
+                this.height = height;
             }
         }
 
@@ -75,7 +75,7 @@ namespace StableDiffusionAPI_Sample
         #endregion
 
         #region UI Variables
-        private string _prompt = string.Empty;
+        private string _prompt = "\tmasterpiece, best quality, soft lighting, absurdres, looking at viewer, solo, ponytail, kamisato ayaka, serafuku, kamisato ayaka (heytea), official art, official alternate costume, blunt bangs, hair bow, hair ribbon, red ribbon, school uniform, sailor shirt, sailor collar, pleated skirt, 1girl, skirt, black bow, cate, genshin,";
         public string Prompt
         {
             get { return _prompt; }
@@ -86,7 +86,7 @@ namespace StableDiffusionAPI_Sample
             }
         }
 
-        private string _negativePrompt = string.Empty;
+        private string _negativePrompt = "nsfw, (worst quality, low quality, extra digits, male:1.4)), bad_prompt,";
         public string NegativePrompt
         {
             get { return _negativePrompt; }
@@ -108,7 +108,7 @@ namespace StableDiffusionAPI_Sample
             }
         }
 
-        private int _height = 512;
+        private int _height = 768;
         public int Height
         {
             get { return _height; }
@@ -130,7 +130,7 @@ namespace StableDiffusionAPI_Sample
             }
         }
 
-        private int _port = 7680;
+        private int _port = 7860;
         public int Port
         {
             get { return _port; }
