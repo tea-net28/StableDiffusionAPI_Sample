@@ -1,5 +1,4 @@
-﻿using StableDiffusionAPI_Sample.Views;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 
 namespace StableDiffusionAPI_Sample
@@ -14,15 +13,82 @@ namespace StableDiffusionAPI_Sample
             public string negative_prompt { get; set; } = string.Empty;
             public int width { get; set; }
             public int height { get; set; }
+            public int steps { get; set; } = 20;
+            public int seed { get; set; } = -1;
+            public int batch_size { get; set; } = 1;
+            public bool save_images { get; set; } = true;
 
             public JsonData(string prompt, string negativePrompt, int width, int height)
             {
                 this.prompt = prompt;
-                negative_prompt = negativePrompt;
+                this.negative_prompt = negativePrompt;
                 this.width = width;
                 this.height = height;
             }
         }
+
+        public class Parameters
+        {
+            public string prompt { get; set; }
+            public string negative_prompt { get; set; }
+            public object styles { get; set; }
+            public int seed { get; set; }
+            public int subseed { get; set; }
+            public int subseed_strength { get; set; }
+            public int seed_resize_from_h { get; set; }
+            public int seed_resize_from_w { get; set; }
+            public object sampler_name { get; set; }
+            public int batch_size { get; set; }
+            public int n_iter { get; set; }
+            public int steps { get; set; }
+            public double cfg_scale { get; set; }
+            public int width { get; set; }
+            public int height { get; set; }
+            public object restore_faces { get; set; }
+            public object tiling { get; set; }
+            public bool do_not_save_samples { get; set; }
+            public bool do_not_save_grid { get; set; }
+            public object eta { get; set; }
+            public object denoising_strength { get; set; }
+            public object s_min_uncond { get; set; }
+            public object s_churn { get; set; }
+            public object s_tmax { get; set; }
+            public object s_tmin { get; set; }
+            public object s_noise { get; set; }
+            public object override_settings { get; set; }
+            public bool override_settings_restore_afterwards { get; set; }
+            public object refiner_checkpoint { get; set; }
+            public object refiner_switch_at { get; set; }
+            public bool disable_extra_networks { get; set; }
+            public object comments { get; set; }
+            public bool enable_hr { get; set; }
+            public int firstphase_width { get; set; }
+            public int firstphase_height { get; set; }
+            public double hr_scale { get; set; }
+            public object hr_upscaler { get; set; }
+            public int hr_second_pass_steps { get; set; }
+            public int hr_resize_x { get; set; }
+            public int hr_resize_y { get; set; }
+            public object hr_checkpoint_name { get; set; }
+            public object hr_sampler_name { get; set; }
+            public string hr_prompt { get; set; }
+            public string hr_negative_prompt { get; set; }
+            public string sampler_index { get; set; }
+            public object script_name { get; set; }
+            public List<object> script_args { get; set; }
+            public bool send_images { get; set; }
+            public bool save_images { get; set; }
+            public Dictionary<string, object> alwayson_scripts { get; set; }
+        }
+
+        public class JsonResponse
+        {
+            public List<string> images { get; set; }
+            public Parameters parameters { get; set; }
+            public string info { get; set; }
+        }
+
+        public JsonResponse? jsonResponse { get; set; }
 
         public HttpCommunications HttpCommunications { get; private set; }
 

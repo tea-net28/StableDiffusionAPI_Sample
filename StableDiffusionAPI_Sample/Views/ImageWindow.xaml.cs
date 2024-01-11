@@ -1,27 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace StableDiffusionAPI_Sample.Views
+namespace StableDiffusionAPI_Sample
 {
-    /// <summary>
-    /// ImageWindow.xaml の相互作用ロジック
-    /// </summary>
     public partial class ImageWindow : Window
     {
-        public ImageWindow()
+        public ImageWindow(byte[] imageData)
         {
             InitializeComponent();
+
+            // BitmapImage 型に変換
+            var generatedImage = Byte2BitmapImage(imageData);
+
+            // 画像を表示
+            Image_Generated.Source = generatedImage;
+        }
+
+
+
+        public static BitmapImage Byte2BitmapImage(byte[] data)
+        {
+            using (var ms = new MemoryStream(data))
+            {
+                BitmapImage outputImage = new BitmapImage();
+                outputImage.BeginInit();
+                // メモリストリームをソースとして設定
+                outputImage.StreamSource = ms;
+                outputImage.CacheOption = BitmapCacheOption.OnLoad;
+                outputImage.EndInit();
+
+                return outputImage;
+            }
         }
     }
 }
