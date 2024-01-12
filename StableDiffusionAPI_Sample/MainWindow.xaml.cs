@@ -26,10 +26,10 @@ namespace StableDiffusionAPI_Sample
         private void OnLoaded_MainWindow(object sender, RoutedEventArgs e)
         {
             // バージョンの取得 ＝＞ ログに出力
-            string version = new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime.ToString("[yyyy.MM.dd HH:mm:ss]", CultureInfo.CurrentCulture);
+            string version = new FileInfo(Assembly.GetExecutingAssembly().Location).LastWriteTime.ToString("[ yyyy.MM.dd HH:mm:ss ]", CultureInfo.CurrentCulture);
             string appVersion = $"Version: {version}";
             _mainViewModel.Version = appVersion;
-            LogWriter.AddLog($"===== Start program. Version: {appVersion} =====");
+            LogWriter.AddLog($"===== Start program. {appVersion} =====");
 
             // 毎フレーム実行するメソッドを設定
             CompositionTarget.Rendering += CompositionTargetRendering;
